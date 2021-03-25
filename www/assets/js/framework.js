@@ -52,6 +52,15 @@ function registerEventListeners() {
 		    loadPage(href);
       }
     });
+	
+   $("body").delegate("a.browserLink[href]", "click", function(e) {
+      href = $(this).attr("href");
+      if (href != null && href.length > 1 && href.substr(0, 1) == "#") {
+          //href = href.substr(1);
+        //href1 = href.split("/");
+        window.open(href,"_system");
+      }
+    });
 
   $("body").delegate("a.inappLink[href],a.inapp-link[href],.inappLink[href]","click",function(e) {
             href=$(this).attr("href");
