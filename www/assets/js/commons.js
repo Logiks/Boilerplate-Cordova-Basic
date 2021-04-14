@@ -78,20 +78,23 @@ String.prototype.endsWith = function(str) {
     return (this.match(str + "$") == str);
 }
 String.prototype.capitalize =   function() {
-    if(this==null || typeof this != "string") return "";
-    return  this.replace(/\w+/g,  function(a) {
+    if(this==null) return "";
+    else x = ""+this;
+    return  x.replace(/\w+/g,  function(a) {
         return  a.charAt(0).toUpperCase() + a.substr(1).toLowerCase();
     });
 }
 String.prototype.toTitle =   function() { 
-    if(this==null || typeof this != "string") return "";
-    a = this.replace("_", " ");
+    if(this==null) return "";
+    else a = ""+this;
+    a = a.replace("_", " ");
     a = a.capitalize();
     return a;
 }
 String.prototype.ucwords =   function() { 
-    if(this==null || typeof this != "string") return "";
-    return this.replace(/^([a-z])|\s+([a-z])/g, function($1) {
+    if(this==null) return "";
+    else a = ""+this;
+    return a.replace(/^([a-z])|\s+([a-z])/g, function($1) {
         return $1.toUpperCase();
     });
 }
